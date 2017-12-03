@@ -101,24 +101,6 @@ This is a great moment for some practice with `sed` (you could even try `-i` for
 
 Once you've done this, import the table using the shortcut from class:
 
-```
-curl -o row.csv https://data.cityofchicago.org/api/views/xzkq-xp2w/rows.csv
-cat row.csv|grep -i '\$'|sed 's/\$//g'|sed 's/"//g'|sed 's/,  /,/g' > salaries.csv
-```
-```
-CREATE TABLE chicago (Last TEXT, First TEXT, Position TEXT, Department TEXT,
-                      FP TEXT, SH TEXT, Hours INTEGER, Salary REAL, Wage REAL);
-.mode csv
-.import salaries.csv chicago
-```
-```
-import sqlite3, pandas as pd
-from matplotlib import pyplot as plt
-con = sqlite3.connect("chi_salaries_db.sqlite")
-query = ""
-for l in open("s.sql"): query += l
-df = pd.read_sql_query(query, con)
-```
 
 Query this table to find:
 
